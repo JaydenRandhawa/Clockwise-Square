@@ -7,18 +7,18 @@ app.on("ready", () => {
           nodeIntegration: true
         }
       })
-    
+
       formWin.loadFile("main.html");
 
-      const resultsWin = new BrowserWindow({
-        webPreferences: {
-          nodeIntegration: true
-        }
-      });
-
-      resultsWin.loadFile("result.html");
-
       ipcMain.on("number:add", function(e, item){
+
+        const resultsWin = new BrowserWindow({
+          webPreferences: {
+            nodeIntegration: true
+          }
+        });
+
+        resultsWin.loadFile("result.html");
 
         console.log(item);
 
