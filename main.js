@@ -1,13 +1,28 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 
 app.on("ready", () => {
 
-    const win = new BrowserWindow({
+    const formWin = new BrowserWindow({
         webPreferences: {
           nodeIntegration: true
         }
       })
     
-      win.loadFile("main.html");
+      formWin.loadFile("main.html");
 
+      const resultsWin = new BrowserWindow({
+        webPreferences: {
+          nodeIntegration: true
+        }
+      });
+
+      resultsWin.loadFile("result.html");
+
+      ipcMain.on("number:add", function(e, item){
+
+        console.log(item);
+
+        resultsWin.webContents.send("number:add", item);
+        formWin.close();
+      });
 });

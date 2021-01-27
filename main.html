@@ -6,10 +6,23 @@
     </head>
 
     <body>
-        <form method="POST" action="result.php">
+        <form>
             <input type="number" id="number" min="1" placeholder="Enter a Square Number">
             <input type="submit" id="enter" value="Create">
         </form>
-    </body>
 
+        <script>
+            const {ipcRenderer} = require("electron");
+
+            const form = document.querySelector("form");
+            form.addEventListener("submit", submitted);
+            function submitted(e){
+                // e.preventDefault //prevents loadng to next page, may need to be removed for product
+                console.log("preventing default :0");
+
+                const item = document.querySelector("#number").nodeValue
+                ipcRenderer.send("number:add", item);
+            }
+        </script>
+    </body>
 </html>
