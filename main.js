@@ -10,7 +10,7 @@ app.on("ready", () => {
 
       formWin.loadFile("main.html");
 
-      ipcMain.on("number:add", function(e, item){
+      ipcMain.on("inpNum", function(event, arg){
 
         const resultsWin = new BrowserWindow({
           webPreferences: {
@@ -20,9 +20,11 @@ app.on("ready", () => {
 
         resultsWin.loadFile("result.html");
 
-        console.log(item);
+        console.log(arg);
 
-        resultsWin.webContents.send("number:add", item);
+        resultsWin.webContents.on('did-finish-load', ()=>{
+          resultsWin.webContents.send('recvNum', arg);
+        })
         formWin.close();
       });
 });

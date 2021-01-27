@@ -8,21 +8,31 @@
     <body>
         <form>
             <input type="number" id="number" min="1" placeholder="Enter a Square Number">
-            <input type="submit" id="enter" value="Create">
+            <input type="submit" id="enter" text="Create" value="Create">
         </form>
 
-        <script>
+        <!-- <script>
             const {ipcRenderer} = require("electron");
 
             const form = document.querySelector("form");
             form.addEventListener("submit", submitted);
             function submitted(e){
-                // e.preventDefault //prevents loadng to next page, may need to be removed for product
-                console.log("preventing default :0");
 
-                const item = document.querySelector("#number").nodeValue
-                ipcRenderer.send("number:add", item);
+                const number = document.querySelector("#number").nodeValue
+                ipcRenderer.send("number:add", number);
             }
-        </script>
+        </script> -->
+
+        <script>
+            const {ipcRenderer} = require('electron');
+
+            const create = document.getElementById('enter');
+
+            create.addEventListener("click", function(){
+
+                ipcRenderer.send("inpNum", document.getElementById("number").value);
+
+            });
+         </script>
     </body>
 </html>

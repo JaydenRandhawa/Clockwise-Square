@@ -6,10 +6,15 @@
     </head>
 
     <body>
-        <h1>You Made It!</h1>
-        <form>
-            <input type="submit" id="enter" value="Press To Go Back">
-        </form>
+        <h1 id="head">Your Number Was</h1>
+
+        <script>
+            const {ipcRenderer} = require('electron');
+
+            ipcRenderer.on("recvNum", function(event, arg){
+                document.getElementById("head").innerHTML = document.getElementById("head").innerHTML + " " + arg;
+            });
+        </script>
     </body>
 
 </html>
