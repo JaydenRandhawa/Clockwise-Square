@@ -13,7 +13,13 @@
             ipcRenderer.on("recvNum", function(event, num){
                 var root = ~~Math.sqrt(num);
                 document.getElementById("head").innerHTML = document.getElementById("head").innerHTML + " " + root;
+                var row = Array(root);
+                for(var i; i < root; i++){
+                row[i];
+                console.log(row[i])
+            }
             });
+
         </script>
     </body>
 
