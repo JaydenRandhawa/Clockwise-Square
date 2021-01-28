@@ -6,18 +6,13 @@
     </head>
 
     <body>
-        <h1 id="head">Your Number Was</h1>
+        <h1 id="head">The Square Root Of Your Number Is:</h1>
 
         <script>
             const {ipcRenderer} = require('electron');
             ipcRenderer.on("recvNum", function(event, num){
                 var root = ~~Math.sqrt(num);
                 document.getElementById("head").innerHTML = document.getElementById("head").innerHTML + " " + root;
-                var row = Array(root);
-                for(var i; i < root; i++){
-                row[i];
-                console.log(row[i])
-            }
             });
 
         </script>
