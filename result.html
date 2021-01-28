@@ -10,8 +10,9 @@
 
         <script>
             const {ipcRenderer} = require('electron');
-            ipcRenderer.on("recvNum", function(event, arg){
-                document.getElementById("head").innerHTML = document.getElementById("head").innerHTML + " " + arg;
+            ipcRenderer.on("recvNum", function(event, num){
+                var root = ~~Math.sqrt(num);
+                document.getElementById("head").innerHTML = document.getElementById("head").innerHTML + " " + root;
             });
         </script>
     </body>

@@ -20,8 +20,6 @@ app.on("ready", () => {
 
         resultsWin.loadFile("result.html");
 
-        console.log(arg);
-
         resultsWin.webContents.on('did-finish-load', ()=>{
           resultsWin.webContents.send('recvNum', arg);
         })
