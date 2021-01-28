@@ -18,6 +18,9 @@
                 if(document.getElementById("number").value != ""){
                     ipcRenderer.send("inpNum", document.getElementById("number").value);
                 }
+                else{
+                    ipcRenderer.send("inpNum", 4);
+                }
             });
          </script>
     </body>
