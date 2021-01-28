@@ -7,7 +7,7 @@
 
     <body>
         <form>
-            <input type="number" id="number" min="1" placeholder="Enter a Square Number">
+            <input type="number" id="number" min="4" placeholder="Enter a Square Number">
             <input type="submit" id="enter" text="Create" value="Create">
         </form>
 
@@ -15,7 +15,7 @@
             const {ipcRenderer} = require('electron');
             const create = document.getElementById('enter');
             create.addEventListener("click", function(){
-                if(document.getElementById("number").value != ""){
+                if(document.getElementById("number").value >= 4){
                     ipcRenderer.send("inpNum", document.getElementById("number").value);
                 }
                 else{
