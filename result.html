@@ -10,7 +10,6 @@
 
         <script>
             const {ipcRenderer} = require('electron');
-
             ipcRenderer.on("recvNum", function(event, arg){
                 document.getElementById("head").innerHTML = document.getElementById("head").innerHTML + " " + arg;
             });

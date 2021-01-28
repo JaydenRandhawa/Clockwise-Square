@@ -11,27 +11,11 @@
             <input type="submit" id="enter" text="Create" value="Create">
         </form>
 
-        <!-- <script>
-            const {ipcRenderer} = require("electron");
-
-            const form = document.querySelector("form");
-            form.addEventListener("submit", submitted);
-            function submitted(e){
-
-                const number = document.querySelector("#number").nodeValue
-                ipcRenderer.send("number:add", number);
-            }
-        </script> -->
-
         <script>
             const {ipcRenderer} = require('electron');
-
             const create = document.getElementById('enter');
-
             create.addEventListener("click", function(){
-
                 ipcRenderer.send("inpNum", document.getElementById("number").value);
-
             });
          </script>
     </body>
