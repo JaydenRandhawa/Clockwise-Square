@@ -15,7 +15,9 @@
             const {ipcRenderer} = require('electron');
             const create = document.getElementById('enter');
             create.addEventListener("click", function(){
-                ipcRenderer.send("inpNum", document.getElementById("number").value);
+                if(document.getElementById("number").value != ""){
+                    ipcRenderer.send("inpNum", document.getElementById("number").value);
+                }
             });
          </script>
     </body>
