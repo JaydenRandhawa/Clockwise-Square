@@ -2,8 +2,6 @@
 
 Input a number and output all number from 1 to the input num in a square starting in the center and going outwards, clockwise.
 
-Read this as a raw file if you want the examples to make sense.
-
 Examples:
 
 5 -->
