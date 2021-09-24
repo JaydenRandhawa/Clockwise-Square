@@ -1,6 +1,6 @@
 # Clockwise-Square
 
-Input a number and output all number from 1 to the input num in a square starting in the center and going outwards and clockwise.
+Input a number and output all numbers from 1 to the input num in a square starting in the center and going outwards and clockwise.
 
 Examples:
 
